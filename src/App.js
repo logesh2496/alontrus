@@ -5,6 +5,7 @@ import {
   Button,
   TextField,
   Typography,
+  Grid,
 } from "@mui/material";
 import { useEffect, useState } from "react";
 
@@ -18,29 +19,26 @@ function App() {
 
   return (
     <Box height="100%">
-      <Box
-        zIndex={999}
-        bottom="20%"
-        position="fixed"
-        top="60%"
-        left="5%"
-        // style={{ backgroundColor: "transparent" }}
-      >
-        <img
-          src="/alontrus.png"
-          alt="logo"
-          onClick={() => setIsLoginOpen(true)}
-        ></img>
-        <Box>
-          <Typography
-            component="div"
-            variant="caption"
-            align="right"
-            fontStyle="italic"
-          >
-            Click anywhere to login
-          </Typography>
-        </Box>
+      <Grid zIndex={999} bottom="20%" position="fixed" top="55%" left="5%">
+        <Grid item xs={10} sm={12}>
+          <img
+            src="/alontrus.png"
+            alt="logo"
+            onClick={() => setIsLoginOpen(true)}
+            width="100%"
+          ></img>
+        </Grid>
+      </Grid>
+      <Box position="fixed" zIndex={999} bottom="15px" left="0" width="100%">
+        <Typography
+          component="div"
+          variant="body-2"
+          align="center"
+          fontStyle="italic"
+          color="white"
+        >
+          Click anywhere to login
+        </Typography>
       </Box>
       <video
         onClick={() => setIsLoginOpen(true)}
