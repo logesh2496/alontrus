@@ -1,4 +1,11 @@
-import { Box, Dialog, DialogTitle, Button, TextField } from "@mui/material";
+import {
+  Box,
+  Dialog,
+  DialogTitle,
+  Button,
+  TextField,
+  Typography,
+} from "@mui/material";
 import { useEffect, useState } from "react";
 
 function App() {
@@ -24,6 +31,16 @@ function App() {
           alt="logo"
           onClick={() => setIsLoginOpen(true)}
         ></img>
+        <Box>
+          <Typography
+            component="div"
+            variant="caption"
+            align="right"
+            fontStyle="italic"
+          >
+            Click anywhere to login
+          </Typography>
+        </Box>
       </Box>
       <video
         onClick={() => setIsLoginOpen(true)}
