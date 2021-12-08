@@ -1,3 +1,4 @@
+import { useTheme } from "@emotion/react";
 import {
   Box,
   Dialog,
@@ -6,12 +7,16 @@ import {
   TextField,
   Typography,
   Grid,
+  useMediaQuery,
 } from "@mui/material";
 import { useEffect, useState } from "react";
 
 function App() {
   const [isLoginOpen, setIsLoginOpen] = useState(false);
   const [isError, setIsError] = useState(false);
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("sm")); // Variable for media query
+  console.log({ isMobile });
 
   useEffect(() => {
     setIsError(false);
@@ -19,7 +24,7 @@ function App() {
 
   return (
     <Box height="100%">
-      <Grid zIndex={999} bottom="20%" position="fixed" top="55%" left="5%">
+      <Grid zIndex={999} bottom="20%" position="fixed" top="60%" left="5%">
         <Grid item xs={10} sm={12}>
           <img
             src="/alontrus.png"
@@ -32,7 +37,7 @@ function App() {
       <Box position="fixed" zIndex={999} bottom="15px" left="0" width="100%">
         <Typography
           component="div"
-          variant="body-2"
+          variant="body2"
           align="center"
           fontStyle="italic"
           color="white"
@@ -50,6 +55,7 @@ function App() {
           height: "100%",
           objectFit: "cover",
           position: "fixed",
+          objectPosition: isMobile ? "-200px" : "",
         }}
       >
         <source
